@@ -22,6 +22,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	defer ln.Close()
 
 	fmt.Println("Listening on port 1234")
 	rpc.Accept(ln)

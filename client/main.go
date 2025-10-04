@@ -12,6 +12,7 @@ func main() {
 	if err != nil {
 		log.Fatal("Dialing error:", err)
 	}
+	defer client.Close()
 
 	args := rpcmodel.Args{A: 5, B: 7}
 	reply := rpcmodel.Reply{}
